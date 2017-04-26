@@ -1,0 +1,22 @@
+#include <memory>       // unique_ptr
+#include <iostream>
+
+class Klasa {
+public:
+    Klasa()  { std::cout << "Konstrukor" << '\n'; }
+    ~Klasa() { std::cout << "Destruktor" << '\n'; }
+};
+
+int main() {
+
+    std::unique_ptr<Klasa> p1(new Klasa());
+    std::unique_ptr<Klasa> p2;
+
+    std::cout << "p1 = " << p1.get() << '\n';
+    std::cout << "p2 = " << p2.get() << '\n';
+
+    p2 = std::move(p1);
+
+    std::cout << "p1 = " << p1.get() << '\n';
+    std::cout << "p2 = " << p2.get() << '\n';
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int a,b; /* nasze zmienne globalne */
+
+void func1 ()
+{
+ /* instrukcje */
+ a=3;
+ /* dalsze instrukcje */
+}
+ 
+int main ()
+{
+ b=3;
+ a=2;
+ return 0;
+}
